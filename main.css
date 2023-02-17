@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 *, *::before,
 * *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 body {
   min-height: 100vh;
@@ -10,8 +12,12 @@ body {
   align-items: center;
   justify-content: space-evenly;
   background-color: rgb(15, 15, 15);
-  -webkit-backdrop-filter: blur(12.5px);
-          backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-image: url("./assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 640px) {
   body {
@@ -20,69 +26,142 @@ body {
     gap: 3rem;
   }
 }
-body img {
+
+img,
+svg {
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
+  cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+}
+
+button {
   cursor: pointer;
 }
-body .container {
+
+.cards-container {
   display: block;
   position: relative;
-  width: 15rem;
+  width: 12rem;
   aspect-ratio: 5/7;
 }
-body .container:nth-of-type(1):hover .cards:nth-of-type(1) {
+.cards-container:nth-of-type(1) .cards:nth-of-type(1) {
   transform-origin: center;
-  transform: rotate(calc(4deg * -2));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  animation: card-animation--2 2s cubic-bezier(0.05, 0.43, 0.25, 0.95) infinite;
 }
-body .container:nth-of-type(1):hover .cards:nth-of-type(2) {
+@keyframes card-animation--2 {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(calc(4.25deg * -2));
+  }
+  50% {
+    transform: rotate(calc(4.25deg * -2));
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.cards-container:nth-of-type(1) .cards:nth-of-type(2) {
   transform-origin: center;
-  transform: rotate(calc(4deg * -1));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  animation: card-animation--1 2s cubic-bezier(0.05, 0.43, 0.25, 0.95) infinite;
 }
-body .container:nth-of-type(1):hover .cards:nth-of-type(3) {
+@keyframes card-animation--1 {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(calc(4.25deg * -1));
+  }
+  50% {
+    transform: rotate(calc(4.25deg * -1));
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.cards-container:nth-of-type(1) .cards:nth-of-type(3) {
   transform-origin: center;
-  transform: rotate(calc(4deg * 0));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  animation: card-animation-0 2s cubic-bezier(0.05, 0.43, 0.25, 0.95) infinite;
 }
-body .container:nth-of-type(1):hover .cards:nth-of-type(4) {
+@keyframes card-animation-0 {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(calc(4.25deg * 0));
+  }
+  50% {
+    transform: rotate(calc(4.25deg * 0));
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.cards-container:nth-of-type(1) .cards:nth-of-type(4) {
   transform-origin: center;
-  transform: rotate(calc(4deg * 1));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  animation: card-animation-1 2s cubic-bezier(0.05, 0.43, 0.25, 0.95) infinite;
 }
-body .container:nth-of-type(1):hover .cards:nth-of-type(5) {
+@keyframes card-animation-1 {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(calc(4.25deg * 1));
+  }
+  50% {
+    transform: rotate(calc(4.25deg * 1));
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.cards-container:nth-of-type(1) .cards:nth-of-type(5) {
   transform-origin: center;
-  transform: rotate(calc(4deg * 2));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  animation: card-animation-2 2s cubic-bezier(0.05, 0.43, 0.25, 0.95) infinite;
 }
-body .container:nth-of-type(2):hover .cards:nth-of-type(2) {
-  transform-origin: center;
-  transform: rotate(calc(4deg * 1));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+@keyframes card-animation-2 {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(calc(4.25deg * 2));
+  }
+  50% {
+    transform: rotate(calc(4.25deg * 2));
+  }
+  90% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
-body .container:nth-of-type(2):hover .cards:nth-of-type(3) {
-  transform-origin: center;
-  transform: rotate(calc(4deg * 2));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
-}
-body .container:nth-of-type(2):hover .cards:nth-of-type(4) {
-  transform-origin: center;
-  transform: rotate(calc(4deg * 3));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
-}
-body .container:nth-of-type(2):hover .cards:nth-of-type(5) {
-  transform-origin: center;
-  transform: rotate(calc(4deg * 4));
-  transition: transform 500ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
-}
-body .container .cards {
+.cards-container .cards {
   width: 100%;
   height: 100%;
-  background: rgba(27, 27, 27, 0.02);
+  background: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   border-radius: 10px;
@@ -92,34 +171,418 @@ body .container .cards {
   transform: none;
   transition: transform 750ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
 }
-body .container .cards:nth-of-type(2) {
+.cards-container .cards:nth-of-type(2) {
   z-index: -1;
 }
-body .container .cards:nth-of-type(3) {
+.cards-container .cards:nth-of-type(3) {
   z-index: -2;
 }
-body .container .cards:nth-of-type(4) {
+.cards-container .cards:nth-of-type(4) {
   z-index: -3;
 }
-body .container .cards:nth-of-type(5) {
+.cards-container .cards:nth-of-type(5) {
   z-index: -4;
 }
-body .container .cards:nth-of-type(6) {
+.cards-container .cards:nth-of-type(6) {
   z-index: -5;
 }
-body .container .cards:nth-of-type(7) {
+.cards-container .cards:nth-of-type(7) {
   z-index: -6;
 }
-body .container .cards:nth-of-type(8) {
+.cards-container .cards:nth-of-type(8) {
   z-index: -7;
 }
-body .container .cards .image-container {
+.cards-container .cards .image-container {
   display: grid;
   place-content: center;
   width: 100%;
   height: 100%;
 }
-body .container .cards .image-container img {
+.cards-container .cards .image-container img {
   width: 15.2rem;
   aspect-ratio: 5/7;
+}
+
+.ui-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.ui-container .ui-options {
+  grid-column: span 1;
+  background-color: white;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+}
+.ui-container .ui-options .options-heading {
+  text-transform: uppercase;
+  color: #3c3c3c;
+  font-weight: 600;
+  font-size: 14px;
+  padding-inline: 0.8rem;
+}
+.ui-container .ui-options .options-list {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ui-container .ui-options .options-list li {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 200ms linear;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.ui-container .ui-options .options-list li:hover {
+  background-color: #f1f1f1;
+  transition: background-color 100ms linear;
+}
+.ui-container .ui-options .options-list li.active {
+  background-color: #f1f1f1;
+}
+.ui-container .ui-display {
+  grid-column: 2/span 3;
+  background-image: url("./assets/metal-texture-with-screws.png"), linear-gradient(121.11deg, #151515 0.54%, #000000 100%);
+  -webkit-backdrop-filter: blur(12.5px);
+          backdrop-filter: blur(12.5px);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  display: flex;
+  position: relative;
+}
+.ui-container .ui-display .display-container {
+  width: 100%;
+  min-height: 400px;
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ui-container .ui-display .display-container .cards {
+  position: absolute;
+  margin-inline: auto;
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(1) {
+  z-index: 0;
+  transform: translate(calc(45px + (-30px * 0))) translateY(calc(25px * 0));
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(2) {
+  z-index: -1;
+  transform: translate(calc(45px + (-30px * 1))) translateY(calc(25px * 1));
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(2) .image-container {
+  filter: blur(2px);
+  background-color: rgba(27, 27, 27, 0.2);
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(3) {
+  z-index: -2;
+  transform: translate(calc(45px + (-30px * 2))) translateY(calc(25px * 2));
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(3) .image-container {
+  filter: blur(2px);
+  background-color: rgba(27, 27, 27, 0.2);
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(4) {
+  z-index: -3;
+  transform: translate(calc(45px + (-30px * 3))) translateY(calc(25px * 3));
+}
+.ui-container .ui-display .display-container .cards:nth-of-type(4) .image-container {
+  filter: blur(2px);
+  background-color: rgba(27, 27, 27, 0.2);
+}
+.ui-container .ui-display .display-container .cards .image-container {
+  display: block;
+  aspect-ratio: 27/25;
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid hsla(0deg, 0%, 50%, 0.2);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ui-container .ui-display .display-container .cards .image-container.bg-container {
+  background-image: url("./assets/sci-girl.png");
+}
+.ui-container .ui-display .display-container .cards .image-container.last-container {
+  border: 1px solid hsla(0deg, 0%, 50%, 0.05);
+}
+.ui-container .ui-display .content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  color: white;
+  align-self: flex-end;
+  position: absolute;
+  right: 2rem;
+  left: 2rem;
+  padding-block: 0.25rem;
+}
+.ui-container .ui-display .content-container .content-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.ui-container .ui-display .content-container .content-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.ui-container .ui-display .content-container .content-info .info {
+  max-width: 30ch;
+}
+.ui-container .ui-display .content-container .content-info .btn {
+  width: -moz-max-content;
+  width: max-content;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+
+.multiple-edition .ui-container,
+.create-nft .ui-container {
+  border: 1px solid hsla(0deg, 0%, 50%, 0.15);
+}
+.multiple-edition .ui-display,
+.create-nft .ui-display {
+  grid-column: 2/span 3;
+  background: url("./assets/multiple-edition-bg.png"), linear-gradient(121.11deg, #151515 0.54%, #000000 100%);
+  -webkit-backdrop-filter: blur(12.5px);
+          backdrop-filter: blur(12.5px);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+}
+.multiple-edition .ui-display .content-container,
+.create-nft .ui-display .content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  color: white;
+  align-self: flex-end;
+  position: static;
+  padding-block: 0.25rem;
+}
+.multiple-edition .ui-display .content-container .content-heading,
+.create-nft .ui-display .content-container .content-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.multiple-edition .ui-display .content-container .content-info,
+.create-nft .ui-display .content-container .content-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.multiple-edition .ui-display .content-container .content-info .info,
+.create-nft .ui-display .content-container .content-info .info {
+  max-width: 30ch;
+}
+.multiple-edition .ui-display .content-container .content-info .btn,
+.create-nft .ui-display .content-container .content-info .btn {
+  width: -moz-max-content;
+  width: max-content;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+
+.create-nft .ui-display {
+  background: url("./assets/nft-art.png");
+  background-position: center -5px;
+  background-size: 105% 105%;
+  background-repeat: no-repeat;
+}
+.create-nft .cards-container {
+  background: linear-gradient(150.94deg, hsla(0deg, 0%, 0%, 0.75) 3.32%, rgba(0, 0, 0, 0) 98.95%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid hsla(0deg, 0%, 50%, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-nft .cards-container::before, .create-nft .cards-container::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid white;
+  width: 40px;
+}
+.create-nft .cards-container::before {
+  transform: rotate(90deg);
+}
+
+.collection .ui-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.collection .ui-container .ui-options {
+  grid-column: span 1;
+  background-color: white;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+}
+.collection .ui-container .ui-options .options-heading {
+  text-transform: uppercase;
+  color: #3c3c3c;
+  font-weight: 600;
+  font-size: 14px;
+  padding-inline: 0.8rem;
+}
+.collection .ui-container .ui-options .options-list {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.collection .ui-container .ui-options .options-list li {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 200ms linear;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.collection .ui-container .ui-options .options-list li:hover {
+  background-color: #f1f1f1;
+  transition: background-color 100ms linear;
+}
+.collection .ui-container .ui-options .options-list li.active {
+  background-color: #f1f1f1;
+}
+.collection .ui-container .ui-display {
+  grid-column: 2/span 3;
+  background-image: linear-gradient(121.11deg, #151515 0.54%, #000000 100%);
+  -webkit-backdrop-filter: blur(12.5px);
+          backdrop-filter: blur(12.5px);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+.collection .ui-container .ui-display .display-container {
+  width: 100%;
+  max-width: 555px;
+  z-index: -2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transform: translateY(2rem);
+}
+.collection .ui-container .ui-display .display-container .display-images-container {
+  display: flex;
+  gap: 1rem;
+  animation: train-animation 10s linear infinite alternate;
+}
+.collection .ui-container .ui-display .display-container .display-images-container:nth-of-type(odd) {
+  transform: translateX(-83px);
+  animation-direction: alternate-reverse;
+}
+.collection .ui-container .ui-display .display-container .display-images-container .image-box {
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1;
+  width: 148px;
+  border: 1px solid hsla(0deg, 0%, 50%, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.collection .ui-container .ui-display .display-container .display-images-container .image-box img {
+  width: 148px;
+  aspect-ratio: 1;
+}
+@keyframes train-animation {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.collection .ui-container .ui-display .gradient-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(179.8deg, rgba(21, 21, 21, 0) 0.21%, #000000 91.91%);
+}
+.collection .ui-container .ui-display:has(.gradient-container:hover) .display-images-container {
+  animation-play-state: paused;
+}
+.collection .ui-container .ui-display .content-container {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  color: white;
+  align-self: flex-end;
+  position: absolute;
+  right: 2rem;
+  left: 2rem;
+  bottom: 2rem;
+  padding-block: 0.25rem;
+}
+.collection .ui-container .ui-display .content-container .content-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.collection .ui-container .ui-display .content-container .content-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.collection .ui-container .ui-display .content-container .content-info .info {
+  max-width: 30ch;
+}
+.collection .ui-container .ui-display .content-container .content-info .btn {
+  width: -moz-max-content;
+  width: max-content;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
 }/*# sourceMappingURL=main.css.map */
