@@ -898,4 +898,123 @@ button {
   width: 100%;
   display: block;
   border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.new-contract {
+  background-image: none;
+  background: #0d0d0d;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.new-contract .main-content {
+  height: calc(100vh - 53px);
+  width: 100%;
+  align-self: flex-end;
+  color: white;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.new-contract .main-content .content {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+.new-contract .main-content .content .content-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.new-contract .main-content .content .content-description {
+  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 44ch;
+}
+.new-contract .main-content .content .deploy-btn {
+  margin-top: 2.5rem;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.new-contract .main-content .contract-information-container {
+  background: #030303;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: relative;
+  isolation: isolate;
+  padding: 1rem;
+  height: 100%;
+}
+.new-contract .main-content .contract-information-container::after, .new-contract .main-content .contract-information-container::before {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 15px;
+}
+.new-contract .main-content .contract-information-container::before {
+  inset: 0;
+  z-index: -1;
+  background: #030303;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.new-contract .main-content .contract-information-container::after {
+  inset: -1px;
+  z-index: -2;
+  background: linear-gradient(150.94deg, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.35) 100%);
+}
+.new-contract .main-content .contract-information-container .contract-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group {
+  width: 100%;
+  flex: 1;
+  background: #030303;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.35);
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group:nth-of-type(1) {
+  border-top: 0;
+  border-radius: 15px 15px 0 0;
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group:last-of-type {
+  border-radius: 0 0 15px 15px;
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group .label {
+  font-size: 14px;
+  color: #8d8d8d;
+  font-weight: 400;
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group .name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group .name svg {
+  width: 0.5rem;
+  fill: hsla(0deg, 0%, 80%, 0.35);
+}
+.new-contract .main-content .contract-information-container .contract-information .information-group .name svg:hover {
+  fill: white;
+  transition: fill 100ms linear;
 }/*# sourceMappingURL=main.css.map */

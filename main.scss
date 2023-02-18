@@ -898,3 +898,140 @@ button {
         }
     }
 }
+
+// New Contract
+.new-contract {
+    background-image: none;
+    background: #0d0d0d;
+    backdrop-filter: blur(10px);
+
+    .main-content {
+        height: calc(100vh - 53px);
+        width: 100%;
+        align-self: flex-end;
+        color: white;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+
+        .content {
+            grid-column: span 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            align-items: flex-start;
+
+            .content-heading {
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
+
+            .content-description {
+                line-height: 1.35;
+                font-size: 18px;
+                font-weight: 400;
+                max-width: 44ch;
+            }
+
+            .deploy-btn {
+                margin-top: 2.5rem;
+                background-color: white;
+                padding: 0.5rem 1rem;
+                font-weight: 600;
+                font-size: 15px;
+                border-radius: 2px;
+            }
+        }
+
+        .contract-information-container {
+            background: #030303;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            backdrop-filter: blur(8px);
+            position: relative;
+            isolation: isolate;
+            padding: 1rem;
+            height: 100%;
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                border-radius: 15px;
+            }
+
+            &::before {
+                inset: 0;
+                z-index: -1;
+                background: #030303;
+                backdrop-filter: blur(10px);
+            }
+
+            &::after {
+                inset: -1px;
+                z-index: -2;
+                background: linear-gradient(
+                    150.94deg,
+                    rgb(255, 255, 255, 0.7) 20%,
+                    rgba(255, 255, 255, 0.35) 100%
+                );
+            }
+            .contract-information {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                border-radius: 15px;
+
+                .information-group {
+                    width: 100%;
+                    flex: 1;
+                    background: #030303;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    backdrop-filter: blur(8px);
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    border-top: 0.5px solid rgba(255, 255, 255, 0.35);
+
+                    &:nth-of-type(1) {
+                        border-top: 0;
+                        border-radius: 15px 15px 0 0;
+                    }
+
+                    &:last-of-type {
+                        border-radius: 0 0 15px 15px;
+                    }
+
+                    .label {
+                        font-size: 14px;
+                        color: #8d8d8d;
+                        font-weight: 400;
+                    }
+
+                    .name {
+                        font-size: 1.25rem;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        svg {
+                            width: 0.5rem;
+                            fill: hsl(0, 0%, 80%, 0.35);
+
+                            &:hover {
+                                fill: white;
+                                transition: fill 100ms linear;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
