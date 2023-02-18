@@ -757,7 +757,13 @@ button {
      object-fit: contain;
 }
 
-.main-content {
+.deploy-contract {
+  background-image: none;
+  background: #030303;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.deploy-contract .main-content {
   margin-top: 53px;
   width: 100%;
   align-self: flex-end;
@@ -765,7 +771,7 @@ button {
   padding-block: 3rem;
   padding-inline: 5rem;
 }
-.main-content .heading-container {
+.deploy-contract .main-content .heading-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -774,15 +780,15 @@ button {
   gap: 0.5rem;
   padding-block: 2rem;
 }
-.main-content .heading-container .page-heading {
+.deploy-contract .main-content .heading-container .page-heading {
   font-size: 3rem;
   font-weight: 700;
 }
-.main-content .heading-container .page-info {
+.deploy-contract .main-content .heading-container .page-info {
   font-size: 1.2rem;
   max-width: 35ch;
 }
-.main-content .contracts-section {
+.deploy-contract .main-content .contracts-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -791,17 +797,17 @@ button {
   gap: 2rem;
   margin-top: 3rem;
 }
-.main-content .contracts-section .contracts-heading {
+.deploy-contract .main-content .contracts-section .contracts-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-.main-content .contracts-section .contracts-heading .heading-text {
+.deploy-contract .main-content .contracts-section .contracts-heading .heading-text {
   font-size: 2rem;
   font-weight: 600;
 }
-.main-content .contracts-section .contracts-heading .new-contract-btn {
+.deploy-contract .main-content .contracts-section .contracts-heading .new-contract-btn {
   display: grid;
   place-content: center;
   padding-block: 0.35em;
@@ -812,15 +818,14 @@ button {
   border-radius: 5px;
   font-size: 16px;
 }
-.main-content .contracts-section .contracts-conatiner {
+.deploy-contract .main-content .contracts-section .contracts-conatiner {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card {
   grid-column: span 1;
-  border: 1px solid rgba(255, 255, 255, 0.35);
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
@@ -830,45 +835,65 @@ button {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+  position: relative;
+  isolation: isolate;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card::after, .deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card::before {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 15px;
+}
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card::before {
+  inset: 0;
+  z-index: -1;
+  background: #030303;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card::after {
+  inset: -1px;
+  z-index: -2;
+  background: linear-gradient(150.94deg, #ffffff 20%, rgba(255, 255, 255, 0.35) 100%);
+}
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info {
   grid-column: span 1;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info.contract-name, .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.chain {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.contract-name, .deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.chain {
   -webkit-padding-after: 1rem;
           padding-block-end: 1rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info.type, .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.symbol {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.type, .deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.symbol {
   -webkit-padding-before: 1rem;
           padding-block-start: 1rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info.type .name, .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.symbol .name {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.type .name, .deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info.symbol .name {
   font-size: 18px;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info .label {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info .label {
   font-size: 12px;
   color: #909090;
   font-weight: 400;
   text-transform: uppercase;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-info .name {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-info .name {
   font-weight: 300;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-name,
-.main-content .contracts-section .contracts-conatiner .contract-card .type {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-name,
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .type {
   -webkit-padding-start: 1rem;
           padding-inline-start: 1rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .chain,
-.main-content .contracts-section .contracts-conatiner .contract-card .symbol {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .chain,
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .symbol {
   -webkit-padding-end: 1rem;
           padding-inline-end: 1rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .contract-name {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .contract-name {
   font-weight: 400;
   font-size: 1.5rem;
 }
-.main-content .contracts-section .contracts-conatiner .contract-card .hr {
+.deploy-contract .main-content .contracts-section .contracts-conatiner .contract-card .hr {
   grid-column: span 2;
   width: 100%;
   display: block;

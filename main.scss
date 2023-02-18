@@ -730,136 +730,169 @@ button {
 }
 
 // Deploy Contract
-.main-content {
-    margin-top: 53px;
-    width: 100%;
-    align-self: flex-end;
-    color: white;
-    padding-block: 3rem;
-    padding-inline: 5rem;
 
-    .heading-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 0.5rem;
-        padding-block: 2rem;
+.deploy-contract {
+    background-image: none;
+    background: #030303;
+    backdrop-filter: blur(10px);
 
-        .page-heading {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .page-info {
-            font-size: 1.2rem;
-            max-width: 35ch;
-        }
-    }
-
-    .contracts-section {
+    .main-content {
+        margin-top: 53px;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 3rem;
+        align-self: flex-end;
+        color: white;
+        padding-block: 3rem;
+        padding-inline: 5rem;
 
-        .contracts-heading {
+        .heading-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            width: 100%;
+            text-align: center;
+            gap: 0.5rem;
+            padding-block: 2rem;
 
-            .heading-text {
-                font-size: 2rem;
-                font-weight: 600;
+            .page-heading {
+                font-size: 3rem;
+                font-weight: 700;
             }
 
-            .new-contract-btn {
-                display: grid;
-                place-content: center;
-                padding-block: 0.35em;
-                padding-inline: 0.7em;
-                background-color: white;
-                color: black;
-                font-weight: 600;
-                border-radius: 5px;
-                font-size: 16px;
+            .page-info {
+                font-size: 1.2rem;
+                max-width: 35ch;
             }
         }
 
-        .contracts-conatiner {
+        .contracts-section {
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
 
-            .contract-card {
-                grid-column: span 1;
-                border: 1px solid rgba(255, 255, 255, 0.35);
-                display: grid;
-                grid-template-columns: 2fr 1fr;
+            .contracts-heading {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
-                border-radius: 15px;
-                padding-block: 1rem;
-                background: linear-gradient(
-                    150.94deg,
-                    #000000 3.32%,
-                    rgba(0, 0, 0, 0) 98.95%
-                );
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-                backdrop-filter: blur(8px);
+                width: 100%;
 
-                .contract-info {
+                .heading-text {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                .new-contract-btn {
+                    display: grid;
+                    place-content: center;
+                    padding-block: 0.35em;
+                    padding-inline: 0.7em;
+                    background-color: white;
+                    color: black;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+            }
+
+            .contracts-conatiner {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+
+                .contract-card {
                     grid-column: span 1;
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    align-items: center;
+                    border-radius: 15px;
+                    padding-block: 1rem;
+                    background: linear-gradient(
+                        150.94deg,
+                        #000000 3.32%,
+                        rgba(0, 0, 0, 0) 98.95%
+                    );
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    backdrop-filter: blur(8px);
+                    position: relative;
+                    isolation: isolate;
 
-                    &.contract-name,
-                    &.chain {
-                        padding-block-end: 1rem;
+                    &::after,
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        border-radius: 15px;
                     }
-                    &.type,
-                    &.symbol {
-                        padding-block-start: 1rem;
+
+                    &::before {
+                        inset: 0;
+                        z-index: -1;
+                        background: #030303;
+                        backdrop-filter: blur(10px);
+                    }
+
+                    &::after {
+                        inset: -1px;
+                        z-index: -2;
+                        background: linear-gradient(
+                            150.94deg,
+                            #ffffff 20%,
+                            rgba(255, 255, 255, 0.35) 100%
+                        );
+                    }
+
+                    .contract-info {
+                        grid-column: span 1;
+
+                        &.contract-name,
+                        &.chain {
+                            padding-block-end: 1rem;
+                        }
+                        &.type,
+                        &.symbol {
+                            padding-block-start: 1rem;
+
+                            .name {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .label {
+                            font-size: 12px;
+                            color: #909090;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                        }
 
                         .name {
-                            font-size: 18px;
+                            font-weight: 300;
                         }
                     }
 
-                    .label {
-                        font-size: 12px;
-                        color: #909090;
+                    .contract-name,
+                    .type {
+                        padding-inline-start: 1rem;
+                    }
+                    .chain,
+                    .symbol {
+                        padding-inline-end: 1rem;
+                    }
+
+                    .contract-name {
                         font-weight: 400;
-                        text-transform: uppercase;
+                        font-size: 1.5rem;
                     }
 
-                    .name {
-                        font-weight: 300;
+                    .hr {
+                        grid-column: span 2;
+                        width: 100%;
+                        display: block;
+                        border-top: 1px solid rgba(255, 255, 255, 0.35);
                     }
-                }
-
-                .contract-name,
-                .type {
-                    padding-inline-start: 1rem;
-                }
-                .chain,
-                .symbol {
-                    padding-inline-end: 1rem;
-                }
-
-                .contract-name {
-                    font-weight: 400;
-                    font-size: 1.5rem;
-                }
-
-                .hr {
-                    grid-column: span 2;
-                    width: 100%;
-                    display: block;
-                    border-top: 1px solid rgba(255, 255, 255, 0.35);
                 }
             }
         }
